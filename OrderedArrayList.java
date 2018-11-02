@@ -13,6 +13,18 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     return list.size()-1;
   }
   public boolean add(T object) {
-    return false;
+    if (object==null){
+      throw new IllegalArgumentException();
+    } else {
+      add(correctIndex(object,this),object);
+      return true;
+    }
+  }
+  public void add(int index, T object) {
+    if (object==null){
+      throw new IllegalArgumentException();
+    } else {
+      super.add(correctIndex(object,this),object);
+    }
   }
 }
