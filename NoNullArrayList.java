@@ -14,4 +14,12 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     }
     return null;
   }
+  public boolean add(T object) {
+    if (object==null){
+      throw new IllegalArgumentException();
+    } else {
+      super.add(object);
+    }
+    return false;
+  }
 }
