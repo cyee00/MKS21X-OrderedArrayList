@@ -22,4 +22,11 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     }
     return false;
   }
+  public void add(int index, T object) {
+    if (object==null) {
+      throw new IllegalArgumentException();
+    } else {
+      super.add(index, object);
+    }
+  }
 }
