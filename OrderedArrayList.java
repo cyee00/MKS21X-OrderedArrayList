@@ -27,4 +27,12 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
       super.add(correctIndex(object,this),object);
     }
   }
+  public T set(int index, T object) {
+    if (object==null){
+      throw new IllegalArgumentException();
+    } else {
+      super.set(correctIndex(object,this),object);
+    }
+    return get(index);
+  }
 }
