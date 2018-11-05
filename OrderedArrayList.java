@@ -5,10 +5,11 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   public OrderedArrayList(int startingCapacity){super(startingCapacity);}
   public int correctIndex (T value, NoNullArrayList<T> list) {
     for (int i=0;i<list.size();i++) {
-      if (value.compareTo(list.get(i))==1){
+      if (value.compareTo(list.get(i))==-1||value.compareTo(list.get(i))==0){
         return i;
       }
     }
+    //return list.size()-1;
     return list.size();
   }
   public boolean add(T object) {
